@@ -70,11 +70,12 @@ class order_infos extends menu{
         $meals = $msisdnProcess->get_meals();
         
         array_push($menu_str,array('Title'=>'开心订餐表','Description'=>"",
-                    'PicUrl'=>'http://wx.hungjie.com/service/head.jpg'));
+                    'PicUrl'=>'http://wx.hungjie.com/service/head.jpg','Url'=>"http://wxweb.hungjie.com?msisdn={$msisdn}&index=0"));
         
+        $index = 1;
         foreach($meals as $meal){
             $menu = array('Title'=>$meal['name'],'Description'=>"价格{$meal['price']}元",
-                    'PicUrl'=>'','Url'=>"http://wxweb.hungjie.com?msisdn={$msisdn}");
+                    'PicUrl'=>'','Url'=>"http://wxweb.hungjie.com?msisdn={$msisdn}&index=$index");
                     
             array_push($menu_str, $menu);
         }
