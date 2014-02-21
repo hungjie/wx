@@ -77,6 +77,8 @@ class order_infos extends menu{
             $menu = array('Title'=>$meal['name'],'Description'=>"价格{$meal['price']}元",
                     'PicUrl'=>'','Url'=>"http://wxweb.hungjie.com?msisdn={$msisdn}&index=$index");
                     
+            $index++;
+                    
             array_push($menu_str, $menu);
         }
         
