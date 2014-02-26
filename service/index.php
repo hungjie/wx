@@ -19,11 +19,11 @@ $data = <<<eto
 <FromUserName><![CDATA[34567]]></FromUserName>
 <CreateTime>123456677</CreateTime>
 <MsgType><![CDATA[event]]></MsgType>
-<Event><![CDATA[subscribe]]></Event>
+<Event><![CDATA[unsubscribe]]></Event>
 <EventKey><![CDATA[EVENTKEY]]></EventKey>
 </xml>
 eto;
-*/
+//*/
 
 
 /*$data = <<<eto
@@ -49,6 +49,7 @@ if ($data) {
 
     switch ($input->MsgType) {
         case 'event':
+            $msisdnProcess = new msisdnProcess();
             if ($input->Event == 'subscribe') {
 //                $res = <<<ETO
 //<xml>
@@ -63,6 +64,7 @@ if ($data) {
 // </xml>
 //ETO;
                 try {
+                    $msisdnProcess->add_user(strval($input->FromUserName));
                     $session = new userSession(strval($input->FromUserName), '');
                     $session->action('mainmenu');
                 } catch (Exception $e) {
@@ -70,7 +72,7 @@ if ($data) {
                     __error_log($e->getMessage(), __FILE__, __LINE__);
                 }
             }else if($input->Event == 'unsubscribe'){
-                
+                $msisdnProcess->set_user_status(strval($input->FromUserName), 0);
             }else if($input->Event == 'CLICK'){
                 try{
                 $event_menu = new event_menu();

@@ -96,6 +96,27 @@ class msisdnProcess{
         
         $db->insert($data);
     }
+    
+    function add_user($id){
+        $db = get_db();
+        $db->begin_query();
+        $db->__table = 'user';
+        
+        try{
+        $db->insert(array('user_id'=>$id));
+        }
+        catch(Exception $e){
+            __error_log($e->getMessage(), __FILE__, __LINE__);
+        }
+    }
+    
+    function set_user_status($id, $status){
+        $db = get_db();
+        $db->begin_query();
+        $db->__table = 'user';
+        
+        $db->update(array('user_id'=>$id), array('status'=>$status));
+    }
 }
 
 ?>
