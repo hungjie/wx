@@ -103,7 +103,7 @@ class msisdnProcess {
         $db->begin_query();
         $db->__table = 'user';
 
-        $res = $db->select('user')->where(array('user_id' => $id))->exec();
+        $res = $db->table('user')->where(array('user_id' => $id))->exec();
 
         try {
             if ($res && $res->next()) {
