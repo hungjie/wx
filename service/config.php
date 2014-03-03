@@ -18,8 +18,8 @@ $config['shortcode_menu_count'] = 0;
 
 define('MAIN_PATH', dirname(__FILE__));
 define('TOKEN', '1qazxsw23edcvfr4');
-define('APP_ID', 'wxf0ad189088f72222');
-define('APP_SECRET', '631032e80667b1aed3b9a43871084111');
+define('APP_ID', 'wxbd3e86450e39c068');
+define('APP_SECRET', '89e9bac4e39b7f720ba32cd43e67e853');
 
 function geturl($url, $method = 'get', $header = null, $postdata = null, $new = false, $timeout = 15) {
     $s = curl_init();
