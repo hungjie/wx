@@ -5,6 +5,7 @@
  * and open the template in the editor.
  */
 require_once MAIN_PATH . '/menu.php';
+require_once MAIN_PATH . '/event_menu.php';
 require_once MAIN_PATH . '/db.php';
 require_once MAIN_PATH.'/msisdn_infos.php';
 
