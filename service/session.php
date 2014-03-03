@@ -147,7 +147,7 @@ class userSession extends sessionDB {
     var $main_menu;
     function userSession($msisdn, $shortcode) {
         $this->command = new command();
-        $this->main_menu = new main_menu();
+        $this->main_menu = new order_infos();
         
         if(empty($shortcode)){
             global $config;
