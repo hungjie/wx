@@ -69,7 +69,7 @@ class order_infos extends menu{
         $msisdnProcess = new msisdnProcess();
         $meals = $msisdnProcess->get_meals();
         
-        array_push($menu_str,array('Title'=>'很佳订餐表','Description'=>"",
+        array_push($menu_str,array('Title'=>'好佳订餐表','Description'=>"",
                     'PicUrl'=>'http://wx.hungjie.com/service/head.jpg','Url'=>"http://wxweb.hungjie.com?msisdn={$msisdn}&index=0"));
         
         $index = 1;
